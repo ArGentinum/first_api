@@ -13,6 +13,10 @@ public class ApiApplication {
 
         Car car=context.getBean(Car.class);
         car.startCar();
+
+        Sim sim=new Airtel();
+        sim.calling();
+        sim.data();
     }
 
 }
