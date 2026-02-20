@@ -1,16 +1,23 @@
 package com.sigma.api;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
 @Component
 public class Car {
-    @Autowired
+   @Autowired
     Engine engine;
+   Brakes brakes;
 
-    public void startCar(){
-        engine.startEngine();
-        System.out.print("car is running!!");
-    }
+   Car(Brakes brakes){
+       this.brakes=brakes;
+   }
+
+   public void start(){
+       engine.startEngine();
+       System.out.println("vrrooom vroooooom!!");
+       brakes.applyBrakes();
+   }
 }
